@@ -6,5 +6,23 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`,
+      },
+    },
+    "gatsby-plugin-image",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          backgroundColor: "transparent",
+        },
+      },
+    },
+  ],
 }
